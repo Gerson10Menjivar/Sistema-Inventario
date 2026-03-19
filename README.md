@@ -1,2 +1,8 @@
 # Sistema-Inventario
-Sistema de inventario desarrollado bajo metodología SCRUM para la gestión de productos y usuarios
+Proyecto académico desarrollado bajo metodología SCRUM.
+
+Estructura del proyecto
+- frontend
+- backend
+- database
+- docs
