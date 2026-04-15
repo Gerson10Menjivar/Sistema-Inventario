@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # InventarioFrontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
@@ -57,3 +58,16 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Sistema de Inventario
+
+Proyecto académico desarrollado bajo metodología SCRUM.
+
+Sistema orientado al control de productos, stock y gestión de usuarios.
+
+Estructura del proyecto
+- frontend
+- backend
+- database
+- docs
+>>>>>>> 5ba94292948e5e15405f213b1711ce5f6397cc56
