@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4 mb-5">
+  <div class="card shadow-lg border-0 rounded-4" style="max-width: 700px; margin: auto;">
+    <div class="card-header bg-dark text-white p-4 rounded-top-4 d-flex align-items-center">
+      <i class="bi bi-box-seam fs-3 me-3"></i>
+      <h3 class="mb-0">Registrar Movimiento</h3>
+    </div>
+
+    <div class="card-body p-4">
+      <form (ngSubmit)="registrar()">
+        
+        <div class="mb-4">
+          <label class="form-label fw-bold text-secondary">Seleccionar Producto</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
+            <select class="form-select border-start-0" [(ngModel)]="movimiento.producto" name="producto" required>
+              <option value="" disabled selected>Busca el producto...</option>
+              <option *ngFor="let p of productos" [value]="p._id">
+                {{ p.nombre }} — (Disponible: {{ p.stock }})
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <label class="form-label fw-bold text-secondary">Tipo de Movimiento</label>
+            <div class="d-flex gap-3 mt-1">
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="tipo" id="entrada" 
+                       value="entrada" [(ngModel)]="movimiento.tipo">
+                <label class="form-check-label text-success fw-bold" for="entrada">
+                  <i class="bi bi-plus-circle-fill"></i> ENTRADA
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="tipo" id="salida" 
+                       value="salida" [(ngModel)]="movimiento.tipo">
+                <label class="form-check-label text-danger fw-bold" for="salida">
+                  <i class="bi bi-dash-circle-fill"></i> SALIDA
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <label class="form-label fw-bold text-secondary">Cantidad</label>
+            <input type="number" class="form-control" name="cantidad" 
+                   [(ngModel)]="movimiento.cantidad" min="1" placeholder="0">
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label fw-bold text-secondary">Observaciones / Motivo</label>
+          <textarea class="form-control" rows="3" name="motivo" 
+                    [(ngModel)]="movimiento.motivo" 
+                    placeholder="Ej: Reposición de stock o Venta a cliente"></textarea>
+        </div>
+
+        <hr class="my-4 text-muted">
+
+        <div class="row g-3">
+          <div class="col-6">
+            <button type="button" class="btn btn-outline-secondary btn-lg rounded-pill w-100 fw-bold" (click)="volver()">
+              <i class="bi bi-arrow-left"></i> Cancelar
+            </button>
+          </div>
+          <div class="col-6">
+            <button type="submit" class="btn btn-dark btn-lg rounded-pill w-100 fw-bold shadow-sm">
+              <i class="bi bi-check-lg"></i> Registrar
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
