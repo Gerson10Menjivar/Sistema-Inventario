@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environment/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,10 +10,10 @@ export class MovimientoService {
   private http = inject(HttpClient);
   
   // 1. Mantenemos la de movimientos para el POST (Registrar)
-  private apiUrl = 'http://localhost:3000/api/movimientos';
+  private apiUrl = `${environment.apiUrl}/movimientos`;
   
   // 2. Agregamos la del historial para el GET (Tabla)
-  private historialUrl = 'http://localhost:3000/api/historial';
+  private historialUrl = `${environment.apiUrl}/historial`;
 
   registrarMovimiento(movimiento: any): Observable<any> {
     return this.http.post(this.apiUrl, movimiento);

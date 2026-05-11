@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environment/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,8 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductoService {
   private http = inject(HttpClient);
-  // Asegúrate de que este puerto coincida con tu backend de Node
-  private url = 'http://localhost:3000/api/productos';
+  private url = `${environment.apiUrl}/productos`;
 
   /**
    * Recuperamos el token para todas las peticiones de productos

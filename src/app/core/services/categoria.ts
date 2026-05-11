@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environment/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoriaService {
   private http = inject(HttpClient);
-  private url = 'http://localhost:3000/api/categorias';
+  private url = `${environment.apiUrl}/categorias`;
 
   private getHeaders() {
     const token = localStorage.getItem('token'); 
